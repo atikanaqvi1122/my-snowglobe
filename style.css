@@ -23,9 +23,11 @@ body{
     position: absolute;
     top: -1rem;
     color: #ffffff;
+    font-weight: bold;
     font-size: var(--size);
     opacity: var(--opacity);
     animation: fall var(--duration) linear var(--delay) infinite;
+    text-shadow: 0 0 3px #6b93c7;
 }
 
 header,
@@ -96,10 +98,11 @@ h1{
     position: absolute;
     top: -1rem;
     color: #ffffff;
+    font-weight: bold;
     font-size: var(--size);
     opacity: var(--opacity);
-    animation: fall var(--duration) linear var(--delay) infinite;
-
+    animation: globe-fall var(--duration) linear var(--delay) infinite;
+    text-shadow: 0 0 3px #4b78ad;
 }
 
 .scene{
@@ -141,4 +144,9 @@ button:hover{
 @keyframes fall{
     from { transform: translate3d(0, -1rem, 0) rotate(0deg); }
     to { transform: translate3d(var(--drift), 110vh, 0) rotate(360deg); }
+}
+
+@keyframes globe-fall{
+    from { transform: translate3d(0, -1rem, 0) rotate(0deg); }
+    to { transform: translate3d(var(--drift), 14rem, 0) rotate(360deg); }
 }

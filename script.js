@@ -20,7 +20,7 @@ function createSnowflakes(container, count) {
 }
 
 createSnowflakes(backgroundSnow, 28);
-createSnowflakes(globeSnow, 16);
+createSnowflakes(globeSnow, 32);
 
 const messages = [
     "You are someones's favourite person to sit next to.",
