@@ -3,6 +3,36 @@ body{
     color: #162d4f;
     background: linear-gradient(#e6f4ff,#ffffff);
     font-family: "Libre Caslon Text", Georgia, serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.background-snow,
+.globe-snow{
+    pointer-events: none;
+}
+
+.background-snow{
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.background-snow .flake{
+    position: absolute;
+    top: -1rem;
+    color: #ffffff;
+    font-size: var(--size);
+    opacity: var(--opacity);
+    animation: fall var(--duration) linear var(--delay) infinite;
+}
+
+header,
+main,
+footer{
+    position: relative;
+    z-index: 1;
 }
 
 h1{
@@ -18,10 +48,11 @@ h1{
 .hero{
     padding: 3rem 1rem 1rem;
     text-align: center;
-
 }
 
 .main{
+    position: relative;
+    z-index: 1;
     max-width: 32rem;
     margin: 0 auto;
     padding: 0rem 1rem 1rem;
@@ -51,10 +82,29 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.globe-snow{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.globe-snow .flake{
+    position: absolute;
+    top: -1rem;
+    color: #ffffff;
+    font-size: var(--size);
+    opacity: var(--opacity);
+    animation: fall var(--duration) linear var(--delay) infinite;
 
 }
 
 .scene{
+    position: relative;
+    z-index: 1;
     width: 78%;
 }
 
@@ -86,4 +136,9 @@ button:hover{
 .globe.shaking {
     animation: shake 600ms ease;
 
+}
+
+@keyframes fall{
+    from { transform: translate3d(0, -1rem, 0) rotate(0deg); }
+    to { transform: translate3d(var(--drift), 110vh, 0) rotate(360deg); }
 }
